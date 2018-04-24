@@ -1,6 +1,7 @@
 package com.airline.controller;
 
 import com.airline.entity.User;
+import com.airline.entity.UserXml;
 import com.airline.service.UserService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -22,16 +23,16 @@ public class testController {
         return "hello, my first SpringMVC restful API!";
     }
 
-    @RequestMapping(value = "/postUser", method = RequestMethod.POST)
+    @RequestMapping(value = "/postUser", method = RequestMethod.POST, produces = "application/xml")
     @ResponseBody
-    public User postUser(@RequestBody User user) {
+    public UserXml postUser(@RequestBody User user) {
         String id = user.getId();
         String name = user.getName();
         ApplicationContext context = new ClassPathXmlApplicationContext("../applicationContext.xml");
 
         userService.registerUser(user);
 
-        User res = (User) context.getBean("User");
+        UserXml res = (UserXml) context.getBean("UserXml");
         res.setId(id);
         res.setName(name);
         return res;
