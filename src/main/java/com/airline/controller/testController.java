@@ -1,5 +1,6 @@
 package com.airline.controller;
 
+import com.airline.dao.UserDao;
 import com.airline.test.User;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -22,6 +23,10 @@ public class testController {
         String id = user.getId();
         String name = user.getName();
         ApplicationContext context = new ClassPathXmlApplicationContext("../applicationContext.xml");
+
+        UserDao userDao = new UserDao();
+        userDao.insertUser(user);
+
         User res = (User) context.getBean("User");
         res.setId(id);
         res.setName(name);
