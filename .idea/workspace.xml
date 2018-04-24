@@ -6,35 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b90b1699-e139-44d9-920c-886aaba0b212" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/springMVC_war.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/springMVC_war_exploded.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/spring_aop_4_3_16_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/airline/dao/UserDaoImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/airline/service/UserService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/airline/service/UserServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/springMVC.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/aopalliance_1_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/springMVC_war_exploded/WEB-INF/applicationContext.xml" afterPath="$PROJECT_DIR$/out/artifacts/springMVC_war_exploded/WEB-INF/applicationContext.xml" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/springMVC_war_exploded/WEB-INF/classes/com/airline/controller/testController.class" afterPath="$PROJECT_DIR$/out/artifacts/springMVC_war_exploded/WEB-INF/classes/com/airline/controller/testController.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/springMVC_war_exploded/WEB-INF/classes/com/airline/dao/UserDao.class" afterPath="$PROJECT_DIR$/out/artifacts/springMVC_war_exploded/WEB-INF/classes/com/airline/dao/UserDao.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/springMVC_war_exploded/WEB-INF/classes/com/airline/test/User.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/springMVC_war_exploded/WEB-INF/classes/jdbc.properties" afterPath="$PROJECT_DIR$/out/artifacts/springMVC_war_exploded/WEB-INF/classes/jdbc.properties" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/springMVC_war_exploded/WEB-INF/classes/spring-mybatis.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/springMVC.iml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/airline/controller/testController.java" afterPath="$PROJECT_DIR$/src/main/java/com/airline/controller/testController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/airline/dao/UserDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/airline/dao/UserDao.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/airline/test/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/airline/entity/User.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/userMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapping/userMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/airline/controller/testController.class" afterPath="$PROJECT_DIR$/target/classes/com/airline/controller/testController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/airline/dao/UserDao.class" afterPath="$PROJECT_DIR$/target/classes/com/airline/dao/UserDao.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/airline/test/User.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapping/userMapper.xml" afterPath="$PROJECT_DIR$/target/classes/mapping/userMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/applicationContext.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/applicationContext.xml" />
-    </list>
+    <list default="true" id="b90b1699-e139-44d9-920c-886aaba0b212" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -475,12 +447,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1524537982481</updated>
-      <workItem from="1524537983850" duration="10681000" />
+      <workItem from="1524537983850" duration="10959000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10681000" />
+    <option name="totallyTimeSpent" value="10959000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
