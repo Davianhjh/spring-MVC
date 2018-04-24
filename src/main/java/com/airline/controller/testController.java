@@ -1,16 +1,21 @@
 package com.airline.controller;
 
-import com.airline.dao.UserDao;
-import com.airline.test.User;
+import com.airline.entity.User;
+import com.airline.service.UserService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
+
 @Controller
 @RequestMapping(value = "/test")
 public class testController {
+    @Resource
+    private UserService userService;
+
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
     public String hello() {
@@ -24,8 +29,7 @@ public class testController {
         String name = user.getName();
         ApplicationContext context = new ClassPathXmlApplicationContext("../applicationContext.xml");
 
-        UserDao userDao = new UserDao();
-        userDao.insertUser(user);
+        userService.registerUser(user);
 
         User res = (User) context.getBean("User");
         res.setId(id);
@@ -37,7 +41,6 @@ public class testController {
     @ResponseBody
     public String postHeader(@RequestHeader HttpHeaders headers, @CookieValue("Agiview") String cookie) {
         String token = headers.getFirst("token");
-        String res = "The token is " + token + ". And cookie is Agiview:" + cookie;
-        return res;
+        return "The token is " + token + ". And cookie is Agiview:" + cookie;
     }
 }
