@@ -1,4 +1,4 @@
-package com.airline.entity;
+package com.airline.test;
 
 import java.io.Serializable;
 

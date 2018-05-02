@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.airline.dao.RegisterDao">
+    <select id="isMailUnique" parameterType="String" resultType="Integer">
+        SELECT id FROM customerAccount WHERE email=#{mail};
+    </select>
+
+    <insert id="preRegMail" parameterType="com.airline.entity.MailRegister">
+        INSERT INTO preRegister (email, password, platform, verifyCode, expire) VALUES (#{mail}, #{password}, #{platform}, #{verifyCode}, ADDTIME(utc_timestamp(), '0 00:30:00'));
+    </insert>
+</mapper>

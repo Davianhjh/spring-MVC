@@ -1,7 +1,7 @@
 package com.airline.service;
 
-import com.airline.dao.UserDao;
-import com.airline.entity.User;
+import com.airline.test.UserDao;
+import com.airline.test.User;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

@@ -1,7 +1,5 @@
-package com.airline.controller;
+package com.airline.test;
 
-import com.airline.entity.User;
-import com.airline.entity.UserXml;
 import com.airline.service.UserService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

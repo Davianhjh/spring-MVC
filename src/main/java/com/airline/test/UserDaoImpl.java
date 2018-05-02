@@ -1,6 +1,5 @@
-package com.airline.dao;
+package com.airline.test;
 
-import com.airline.entity.User;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.airline.entity;
+package com.airline.test;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;

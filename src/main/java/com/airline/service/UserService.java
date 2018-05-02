@@ -1,6 +1,6 @@
 package com.airline.service;
 
-import com.airline.entity.User;
+import com.airline.test.User;
 
 public interface UserService {
 

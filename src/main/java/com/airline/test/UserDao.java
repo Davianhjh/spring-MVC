@@ -1,6 +1,4 @@
-package com.airline.dao;
-
-import com.airline.entity.User;
+package com.airline.test;
 
 public interface UserDao {
 
