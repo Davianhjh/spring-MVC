@@ -5,7 +5,15 @@
         SELECT id FROM customerAccount WHERE email=#{mail};
     </select>
 
-    <insert id="preRegMail" parameterType="com.airline.entity.MailRegister">
+    <select id="isTelUnique" resultType="Integer">
+        SELECT id FROM customerAccount WHERE tel_country=#{telCountry} AND tel=#{tel};
+    </select>
+
+    <insert id="preRegMail" parameterType="com.airline.entity.MailAccount">
         INSERT INTO preRegister (email, password, platform, verifyCode, expire) VALUES (#{mail}, #{password}, #{platform}, #{verifyCode}, ADDTIME(utc_timestamp(), '0 00:30:00'));
+    </insert>
+
+    <insert id="preRegTel" parameterType="com.airline.entity.TelAccount">
+        INSERT INTO preRegister (tel_country, tel, password, platform, verifyCode, expire) VALUES (#{telCountry}, #{tel}, #{password}, #{platform}, #{verifyCode}, ADDTIME(utc_timestamp(), '0 00:10:00'));
     </insert>
 </mapper>

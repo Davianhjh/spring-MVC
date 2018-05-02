@@ -9,6 +9,7 @@ public class RegisterRes extends baseResponse implements Serializable {
     public static final long serialVersionUID = 1L;
 
     private int register;
+    private String verifyCode;
 
     public RegisterRes(){}
 
@@ -18,5 +19,13 @@ public class RegisterRes extends baseResponse implements Serializable {
 
     public void setRegister(int register) {
         this.register = register;
+    }
+
+    public String getVerifyCode() {
+        return verifyCode;
+    }
+
+    public void setVerifyCode(String verifyCode) {
+        this.verifyCode = verifyCode;
     }
 }

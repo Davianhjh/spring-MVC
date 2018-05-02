@@ -10,8 +10,4 @@
     <!-- 加载静态配置文件 -->
     <import resource="spring-mybatis.xml"/>
 
-    <bean id="User" class="com.airline.test.User" />
-
-    <bean id="UserXml" class="com.airline.test.UserXml"/>
-
 </beans>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.airline.dao.LoginDao">
+    <select id="mailLogin" parameterType="com.airline.entity.MailAccount" resultType="com.airline.entity.LoginData">
+        SELECT id AS uid, password, username, credit FROM customerAccount WHERE email=#{mail};
+    </select>
+
+    <select id="telLogin" parameterType="com.airline.entity.TelAccount" resultType="com.airline.entity.LoginData">
+        SELECT id AS uid, password, username, credit FROM customerAccount WHERE tel_country=#{telCountry} AND tel=#{tel};
+    </select>
+
+    <select id="quickLogin" parameterType="com.airline.entity.TelAccount" resultType="Integer">
+        SELECT id FROM customerAccount WHERE tel_country=#{telCountry} AND tel=#{tel};
+    </select>
+
+    <select id="searchToken" parameterType="int" resultType="Integer">
+        SELECT tid FROM customerToken WHERE uid=#{uid};
+    </select>
+
+    <insert id="createToken" parameterType="com.airline.entity.TokenData">
+        INSERT INTO customerToken (uid, token, create, platform, expire) VALUES (#{uid}, #{token}, #{create}, #{platform}, ADDTIME(utc_timestamp(), '7 00:00:00'));
+    </insert>
+
+    <update id="updateToken" parameterType="com.airline.entity.TokenData">
+        UPDATE customerToken SET token=#{token}, platform=#{platform}, expire=ADDTIME(utc_timestamp(), '7 00:00:00') WHERE uid=#{uid};
+    </update>
+
+    <insert id="insertQuickInfo" parameterType="com.airline.entity.TelAccount">
+        INSERT INTO quickAccess (uid, tel_country, tel, username, password, platform, verifyCode, expire) VALUES (#{uid},#{telCountry},#{tel},#{username},#{password},#{platform},#{verifyCode},ADDTIME(utc_timestamp(), '0 00:10:00'));
+    </insert>
+</mapper>
