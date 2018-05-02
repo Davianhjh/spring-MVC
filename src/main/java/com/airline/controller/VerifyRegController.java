@@ -1,11 +1,14 @@
 package com.airline.controller;
 
 import com.airline.entity.AccountData;
+import com.airline.entity.TokenData;
 import com.airline.entity.VerifyRegister;
 import com.airline.response.RegVerifyRes;
 import com.airline.service.AccountVerify;
 import com.airline.service.DeleteVerify;
+import com.airline.service.MemberLogin;
 import com.airline.tools.UTCTimeUtil;
+import com.airline.tools.tokenUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,6 +26,9 @@ public class VerifyRegController {
 
     @Resource
     private DeleteVerify deleteVerify;
+
+    @Resource
+    private MemberLogin memberLogin;
 
     @RequestMapping(value = "/verifyMail", method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
@@ -69,9 +75,18 @@ public class VerifyRegController {
             if (accountData != null) {
                 accountVerify.create(accountData);
                 deleteVerify.deleteVerifyInfo(verifyRegister);
+                String token = tokenUtil.createJWT(String.valueOf(accountData.getId()), accountData.getUserName(), platform, 7 * 24 * 3600 * 1000);
+                TokenData tokenData = new TokenData();
+                tokenData.setUid(accountData.getId());
+                tokenData.setToken(token);
+                tokenData.setCreate(UTCTimeUtil.getUTCTimeStr());
+                tokenData.setPlatform(platform);
+                memberLogin.recordToken(tokenData);
                 res.setAuth(1);
                 res.setCode(0);
                 res.setVerify(1);
+                res.setName(accountData.getUserName());
+                res.setToken(token);
                 return res;
             } else {
                 res.setAuth(-1);

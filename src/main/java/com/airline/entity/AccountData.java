@@ -8,7 +8,7 @@ import java.io.Serializable;
 public class AccountData extends baseAccount implements Serializable {
     public static final long serialVersionUID = 1L;
 
-    private int uid;
+    private int id;
     private String mail;
     private String telCountry;
     private String tel;
@@ -16,12 +16,12 @@ public class AccountData extends baseAccount implements Serializable {
 
     public AccountData(){}
 
-    public int getUid() {
-        return uid;
+    public int getId() {
+        return id;
     }
 
-    public void setUid(int uid) {
-        this.uid = uid;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getMail() {

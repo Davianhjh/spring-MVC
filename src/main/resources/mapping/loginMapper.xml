@@ -18,7 +18,7 @@
     </select>
 
     <insert id="createToken" parameterType="com.airline.entity.TokenData">
-        INSERT INTO customerToken (uid, token, create, platform, expire) VALUES (#{uid}, #{token}, #{create}, #{platform}, ADDTIME(utc_timestamp(), '7 00:00:00'));
+        INSERT INTO customerToken (uid, token, `create`, platform, expire) VALUES (#{uid}, #{token}, #{create}, #{platform}, ADDTIME(utc_timestamp(), '7 00:00:00'));
     </insert>
 
     <update id="updateToken" parameterType="com.airline.entity.TokenData">
