@@ -1,9 +1,6 @@
 package com.airline.service;
 
-import com.airline.entity.LoginData;
-import com.airline.entity.MailAccount;
-import com.airline.entity.TelAccount;
-import com.airline.entity.TokenData;
+import com.airline.entity.*;
 
 public interface MemberLogin {
 
@@ -11,7 +8,7 @@ public interface MemberLogin {
 
     LoginData searchAccount (TelAccount telAccount);
 
-    Integer quickAccess (TelAccount telAccount);
+    AccountData quickAccess (TelAccount telAccount);
 
     void recordToken (TokenData tokenData);
 

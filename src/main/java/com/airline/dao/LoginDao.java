@@ -1,9 +1,6 @@
 package com.airline.dao;
 
-import com.airline.entity.LoginData;
-import com.airline.entity.MailAccount;
-import com.airline.entity.TelAccount;
-import com.airline.entity.TokenData;
+import com.airline.entity.*;
 
 public interface LoginDao {
 
@@ -11,7 +8,7 @@ public interface LoginDao {
 
     LoginData telLogin (TelAccount telAccount);
 
-    Integer quickLogin (TelAccount telAccount);
+    AccountData quickLogin (TelAccount telAccount);
 
     Integer searchToken (int uid);
 

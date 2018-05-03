@@ -1,5 +1,6 @@
 package com.airline.dao;
 
+import com.airline.entity.TelAccount;
 import com.airline.entity.VerifyRegister;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
@@ -17,6 +18,12 @@ public class DelVerifyDaoImpl extends SqlSessionDaoSupport implements DelVerifyD
 
     public void delVerifyInfo (VerifyRegister verifyRegister) {
         getSqlSession().delete("com.airline.dao.DelVerifyDao.delVerifyInfo", verifyRegister);
+        getSqlSession().commit();
+        getSqlSession().close();
+    }
+
+    public void delQuickInfo (TelAccount telAccount) {
+        getSqlSession().delete("com.airline.dao.DelVerifyDao.delQuickInfo", telAccount);
         getSqlSession().commit();
         getSqlSession().close();
     }

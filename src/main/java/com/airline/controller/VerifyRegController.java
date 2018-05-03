@@ -42,7 +42,7 @@ public class VerifyRegController {
         try {
             AccountData accountData = accountVerify.verify(verifyRegister);
             if (accountData != null) {
-                accountVerify.create(accountData);
+                accountVerify.createAccount(accountData);
                 deleteVerify.deleteVerifyInfo(verifyRegister);
                 res.setAuth(1);
                 res.setCode(0);
@@ -73,11 +73,11 @@ public class VerifyRegController {
         try {
             AccountData accountData = accountVerify.verify(verifyRegister);
             if (accountData != null) {
-                accountVerify.create(accountData);
+                accountVerify.createAccount(accountData);
                 deleteVerify.deleteVerifyInfo(verifyRegister);
-                String token = tokenUtil.createJWT(String.valueOf(accountData.getId()), accountData.getUserName(), platform, 7 * 24 * 3600 * 1000);
+                String token = tokenUtil.createJWT(String.valueOf(accountData.getUid()), accountData.getUserName(), platform, 7 * 24 * 3600 * 1000);
                 TokenData tokenData = new TokenData();
-                tokenData.setUid(accountData.getId());
+                tokenData.setUid(accountData.getUid());
                 tokenData.setToken(token);
                 tokenData.setCreate(UTCTimeUtil.getUTCTimeStr());
                 tokenData.setPlatform(platform);

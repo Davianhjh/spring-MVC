@@ -1,6 +1,7 @@
 package com.airline.service;
 
 import com.airline.dao.DelVerifyDao;
+import com.airline.entity.TelAccount;
 import com.airline.entity.VerifyRegister;
 import org.springframework.stereotype.Service;
 
@@ -14,5 +15,9 @@ public class DeleteVerifyImpl implements DeleteVerify {
 
     public void deleteVerifyInfo (VerifyRegister verifyRegister) {
         delVerifyDao.delVerifyInfo(verifyRegister);
+    }
+
+    public void deleteQuickInfo(TelAccount telAccount) {
+        delVerifyDao.delQuickInfo(telAccount);
     }
 }

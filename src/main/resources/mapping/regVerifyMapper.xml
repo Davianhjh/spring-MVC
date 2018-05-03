@@ -5,7 +5,11 @@
         SELECT uid, email AS mail, tel_country AS telCountry, tel, password, platform FROM preRegister WHERE verifyCode=#{verifyCode} AND platform=#{platform} AND expire>#{nowUTC};
     </select>
 
-    <insert id="createAccount" useGeneratedKeys="true" keyProperty="id" parameterType="com.airline.entity.AccountData">
+    <insert id="createAccount" useGeneratedKeys="true" keyProperty="uid" parameterType="com.airline.entity.AccountData">
         INSERT INTO customerAccount (email, tel_country, tel, password, username, platform) VALUES (#{mail}, #{telCountry}, #{tel}, #{password}, #{userName}, #{platform});
     </insert>
+
+    <select id="verifyLogin" parameterType="com.airline.entity.TelAccount" resultType="com.airline.entity.AccountData">
+        SELECT uid, username AS userName, platform FROM quickAccess WHERE verifyCode=#{verifyCode} AND platform=#{platform} AND tel_country=#{telCountry} AND tel=#{tel} AND expire>utc_timestamp();
+    </select>
 </mapper>

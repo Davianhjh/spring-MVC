@@ -1,10 +1,7 @@
 package com.airline.service;
 
 import com.airline.dao.LoginDao;
-import com.airline.entity.LoginData;
-import com.airline.entity.MailAccount;
-import com.airline.entity.TelAccount;
-import com.airline.entity.TokenData;
+import com.airline.entity.*;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +21,7 @@ public class MemberLoginImpl implements MemberLogin {
         return loginDao.telLogin(telAccount);
     }
 
-    public Integer quickAccess(TelAccount telAccount) {
+    public AccountData quickAccess(TelAccount telAccount) {
         return loginDao.quickLogin(telAccount);
     }
 

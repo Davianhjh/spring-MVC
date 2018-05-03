@@ -9,8 +9,8 @@
         SELECT id AS uid, password, username, credit FROM customerAccount WHERE tel_country=#{telCountry} AND tel=#{tel};
     </select>
 
-    <select id="quickLogin" parameterType="com.airline.entity.TelAccount" resultType="Integer">
-        SELECT id FROM customerAccount WHERE tel_country=#{telCountry} AND tel=#{tel};
+    <select id="quickLogin" parameterType="com.airline.entity.TelAccount" resultType="com.airline.entity.AccountData">
+        SELECT id AS uid, tel_country AS telCountry, tel, username AS userName, password FROM customerAccount WHERE tel_country=#{telCountry} AND tel=#{tel};
     </select>
 
     <select id="searchToken" parameterType="int" resultType="Integer">
@@ -26,6 +26,6 @@
     </update>
 
     <insert id="insertQuickInfo" parameterType="com.airline.entity.TelAccount">
-        INSERT INTO quickAccess (uid, tel_country, tel, username, password, platform, verifyCode, expire) VALUES (#{uid},#{telCountry},#{tel},#{username},#{password},#{platform},#{verifyCode},ADDTIME(utc_timestamp(), '0 00:10:00'));
+        INSERT INTO quickAccess (uid, tel_country, tel, username, password, platform, verifyCode, expire) VALUES (#{uid},#{telCountry},#{tel},#{userName},#{password},#{platform},#{verifyCode},ADDTIME(utc_timestamp(), '0 00:10:00'));
     </insert>
 </mapper>

@@ -5,47 +5,20 @@ import org.springframework.stereotype.Component;
 import java.io.Serializable;
 
 @Component
-public class AccountData extends baseAccount implements Serializable {
+public class AccountData extends TelAccount implements Serializable {
     public static final long serialVersionUID = 1L;
 
-    private int id;
-    private String mail;
-    private String telCountry;
-    private String tel;
+    private int uid;
     private String userName;
 
     public AccountData(){}
 
-    public int getId() {
-        return id;
+    public int getUid() {
+        return uid;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getMail() {
-        return mail;
-    }
-
-    public void setMail(String mail) {
-        this.mail = mail;
-    }
-
-    public String getTelCountry() {
-        return telCountry;
-    }
-
-    public void setTelCountry(String telCountry) {
-        this.telCountry = telCountry;
-    }
-
-    public String getTel() {
-        return tel;
-    }
-
-    public void setTel(String tel) {
-        this.tel = tel;
+    public void setUid(int uid) {
+        this.uid = uid;
     }
 
     public String getUserName() {

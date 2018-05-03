@@ -1,9 +1,6 @@
 package com.airline.dao;
 
-import com.airline.entity.LoginData;
-import com.airline.entity.MailAccount;
-import com.airline.entity.TelAccount;
-import com.airline.entity.TokenData;
+import com.airline.entity.*;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
@@ -31,8 +28,8 @@ public class LoginDaoImpl extends SqlSessionDaoSupport implements LoginDao {
         return loginData;
     }
 
-    public Integer quickLogin(TelAccount telAccount) {
-        Integer result = getSqlSession().selectOne("com.airline.dao.LoginDao.quickLogin", telAccount);
+    public AccountData quickLogin(TelAccount telAccount) {
+        AccountData result = getSqlSession().selectOne("com.airline.dao.LoginDao.quickLogin", telAccount);
         getSqlSession().close();
         return result;
     }

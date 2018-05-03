@@ -4,4 +4,8 @@
     <delete id="delVerifyInfo" parameterType="com.airline.entity.VerifyRegister">
         DELETE FROM preRegister WHERE verifyCode=#{verifyCode} AND platform=#{platform};
     </delete>
+
+    <delete id="delQuickInfo" parameterType="com.airline.entity.TelAccount">
+        DELETE FROM quickAccess WHERE  verifyCode=#{verifyCode} AND platform=#{platform};
+    </delete>
 </mapper>

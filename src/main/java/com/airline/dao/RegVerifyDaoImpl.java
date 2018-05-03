@@ -1,6 +1,7 @@
 package com.airline.dao;
 
 import com.airline.entity.AccountData;
+import com.airline.entity.TelAccount;
 import com.airline.entity.VerifyRegister;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
@@ -26,5 +27,11 @@ public class RegVerifyDaoImpl extends SqlSessionDaoSupport implements RegVerifyD
         getSqlSession().insert("com.airline.dao.RegVerifyDao.createAccount", accountData);
         getSqlSession().commit();
         getSqlSession().close();
+    }
+
+    public AccountData verifyLogin(TelAccount telAccount) {
+        AccountData accountData = getSqlSession().selectOne("com.airline.dao.RegVerifyDao.verifyLogin", telAccount);
+        getSqlSession().close();
+        return accountData;
     }
 }
