@@ -29,6 +29,9 @@ public class LoginController {
     @Resource
     private DeleteVerify deleteVerify;
 
+    @Resource
+    private TokenData tokenData;
+
     @RequestMapping(value = "/login", method = RequestMethod.POST, produces = "application/json")
     @ResponseBody
     public LoginRes login (@RequestBody TelAccount telAccount) {
@@ -43,7 +46,6 @@ public class LoginController {
             }
             if (loginData != null) {
                 String token = tokenUtil.createJWT(String.valueOf(loginData.getUid()), loginData.getUserName(), telAccount.getPlatform(), 7 * 24 * 3600 * 1000);
-                TokenData tokenData = new TokenData();
                 tokenData.setUid(loginData.getUid());
                 tokenData.setToken(token);
                 tokenData.setCreate(UTCTimeUtil.getUTCTimeStr());
@@ -102,7 +104,6 @@ public class LoginController {
             AccountData accountData = accountVerify.verify(telAccount);
             if (accountData != null) {
                 String token = tokenUtil.createJWT(String.valueOf(accountData.getUid()), accountData.getUserName(), accountData.getPlatform(), 7 * 24 * 3600 * 1000);
-                TokenData tokenData = new TokenData();
                 tokenData.setUid(accountData.getUid());
                 tokenData.setToken(token);
                 tokenData.setCreate(UTCTimeUtil.getUTCTimeStr());
